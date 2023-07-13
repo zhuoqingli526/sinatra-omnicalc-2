@@ -32,6 +32,7 @@
     // "bin/": true,
     // "spec/": true,
     "examples.txt": true,
+    "tmp/": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
