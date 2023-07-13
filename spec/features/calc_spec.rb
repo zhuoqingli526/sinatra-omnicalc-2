@@ -27,7 +27,7 @@ describe "/add" do
 end
 
 describe "/add" do
-  it "has a label with the text 'Add this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'Add this:'", points: 1, hint: h("copy_must_match") do
     visit "/add"
 
     expect(page).to have_css("label", text: /Add this/i),
@@ -36,7 +36,7 @@ describe "/add" do
 end
 
 describe "/add" do
-  it "has a label with the text 'to this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'to this:'", points: 1, hint: h("copy_must_match") do
     visit "/add"
 
     expect(page).to have_css("label", text: /to this/i),
@@ -66,6 +66,26 @@ describe "/add" do
 
     expect(page).to have_css("form[action]"),
       "Expected page to have a form element with an 'action' attribute but didn't find one."
+  end
+end
+
+describe "/add" do
+  it "has a label with the text 'Add this:' that has a matching input", points: 1, hint: h("label_for_input") do
+    visit "/add"
+    name_label = find("label", :text => /Add this/i)
+    for_attribute = name_label[:for]
+    
+    if for_attribute.nil?
+      expect(for_attribute).to_not be_empty,
+        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+    else
+      all_inputs = all("input")
+  
+      all_input_ids = all_inputs.map { |input| input[:id] }
+  
+      expect(all_input_ids.count(for_attribute)).to eq(1),
+        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."  
+    end
   end
 end
 
@@ -99,7 +119,7 @@ describe "/subtract" do
 end
 
 describe "/subtract" do
-  it "has a label with the text 'Subtract this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'Subtract this:'", points: 1, hint: h("copy_must_match") do
     visit "/subtract"
 
     expect(page).to have_css("label", text: /Subtract this/i),
@@ -108,7 +128,7 @@ describe "/subtract" do
 end
 
 describe "/subtract" do
-  it "has a label with the text 'from this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'from this:'", points: 1, hint: h("copy_must_match") do
     visit "/subtract"
 
     expect(page).to have_css("label", text: /from this/i),
@@ -138,6 +158,26 @@ describe "/subtract" do
 
     expect(page).to have_css("form[action]"),
       "Expected page to have a form element with an 'action' attribute but didn't find one."
+  end
+end
+
+describe "/subtract" do
+  it "has a label with the text 'Subtract this:' that has a matching input", points: 1, hint: h("label_for_input") do
+    visit "/subtract"
+    name_label = find("label", :text => /Subtract this/i)
+    for_attribute = name_label[:for]
+    
+    if for_attribute.nil?
+      expect(for_attribute).to_not be_empty,
+        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+    else
+      all_inputs = all("input")
+  
+      all_input_ids = all_inputs.map { |input| input[:id] }
+  
+      expect(all_input_ids.count(for_attribute)).to eq(1),
+        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."  
+    end
   end
 end
 
@@ -173,7 +213,7 @@ describe "/multiply" do
 end
 
 describe "/multiply" do
-  it "has a label with the text 'Multiply this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'Multiply this:'", points: 1, hint: h("copy_must_match") do
     visit "/multiply"
 
     expect(page).to have_css("label", text: /Multiply this/i),
@@ -182,7 +222,7 @@ describe "/multiply" do
 end
 
 describe "/multiply" do
-  it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match") do
     visit "/multiply"
 
     expect(page).to have_css("label", text: /by this/i),
@@ -212,6 +252,26 @@ describe "/multiply" do
 
     expect(page).to have_css("form[action]"),
       "Expected page to have a form element with an 'action' attribute but didn't find one."
+  end
+end
+
+describe "/multiply" do
+  it "has a label with the text 'Multiply this:' that has a matching input", points: 1, hint: h("label_for_input") do
+    visit "/multiply"
+    name_label = find("label", :text => /Multiply this/i)
+    for_attribute = name_label[:for]
+    
+    if for_attribute.nil?
+      expect(for_attribute).to_not be_empty,
+        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+    else
+      all_inputs = all("input")
+  
+      all_input_ids = all_inputs.map { |input| input[:id] }
+  
+      expect(all_input_ids.count(for_attribute)).to eq(1),
+        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."  
+    end
   end
 end
 
@@ -247,7 +307,7 @@ describe "/divide" do
 end
 
 describe "/divide" do
-  it "has a label with the text 'Divide this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'Divide this:'", points: 1, hint: h("copy_must_match") do
     visit "/divide"
 
     expect(page).to have_css("label", text: /Divide this/i),
@@ -256,7 +316,7 @@ describe "/divide" do
 end
 
 describe "/divide" do
-  it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match label_for_input") do
+  it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match") do
     visit "/divide"
 
     expect(page).to have_css("label", text: /by this/i),
@@ -286,6 +346,26 @@ describe "/divide" do
 
     expect(page).to have_css("form[action]"),
       "Expected page to have a form element with an 'action' attribute but didn't find one."
+  end
+end
+
+describe "/divide" do
+  it "has a label with the text 'Divide this:' that has a matching input", points: 1, hint: h("label_for_input") do
+    visit "/divide"
+    name_label = find("label", :text => /Divide this/i)
+    for_attribute = name_label[:for]
+    
+    if for_attribute.nil?
+      expect(for_attribute).to_not be_empty,
+        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+    else
+      all_inputs = all("input")
+  
+      all_input_ids = all_inputs.map { |input| input[:id] }
+  
+      expect(all_input_ids.count(for_attribute)).to eq(1),
+        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."  
+    end
   end
 end
 
