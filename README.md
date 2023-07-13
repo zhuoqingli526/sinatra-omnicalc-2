@@ -1,5 +1,3 @@
-# Sinatra-Template
+# Sinatra Omnicalc 2
 
-1. `bin/setup`
-2. `bin/dev`
-3. ...
+[Notes for this project are here.](https://learn.firstdraft.com/lessons/112)
