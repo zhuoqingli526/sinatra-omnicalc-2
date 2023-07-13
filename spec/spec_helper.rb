@@ -1,6 +1,6 @@
-File.file?('./app.rb') ? require('./app.rb') : nil
-File.file?('./config/environment.rb') ? require('./config/environment.rb') : nil
-require 'capybara/dsl'
+File.file?("./app.rb") ? require("./app.rb") : nil
+File.file?("./config/environment.rb") ? require("./config/environment.rb") : nil
+require "capybara/dsl"
 require "draft_matchers"
 require "rspec-html-matchers"
 require "capybara/rspec"
@@ -9,7 +9,7 @@ require "#{File.expand_path('../support/hint_formatter', __FILE__)}"
 require "#{File.expand_path('../support/headless_chrome', __FILE__)}"
 
 # setup for hints
-require 'i18n'
+require "i18n"
 I18n.load_path += Dir[File.expand_path("../support", __FILE__) + "/*.yml"]
 I18n.default_locale = :en # (note that `en` is already the default!)
 

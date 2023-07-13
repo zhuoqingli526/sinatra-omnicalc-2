@@ -1,5 +1,5 @@
 describe "/add" do
-  it "has a functional Route Controller Action View", points: 1 do
+  it "has a functional URL", points: 1 do
     visit "/add"
 
     expect(page.status_code).to be(200)
@@ -71,7 +71,7 @@ end
 
 # subtract
 describe "/subtract" do
-  it "has a functional Route Controller Action View", points: 1 do
+  it "has a functional URL", points: 1 do
     visit "/subtract"
 
     expect(page.status_code).to be(200)
@@ -145,7 +145,7 @@ end
 #  start multi
 
 describe "/multiply" do
-  it "has a functional Route Controller Action View", points: 1 do
+  it "has a functional URL", points: 1 do
     visit "/multiply"
 
     expect(page.status_code).to be(200)
@@ -219,7 +219,7 @@ end
 #  start divide
 
 describe "/divide" do
-  it "has a functional Route Controller Action View", points: 1 do
+  it "has a functional URL", points: 1 do
     visit "/divide"
 
     expect(page.status_code).to be(200)
