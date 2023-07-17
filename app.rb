@@ -1,4 +1,4 @@
-require 'sinatra'
+require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
@@ -12,7 +12,7 @@ end
 get("/wizard_add") do
   @first_num = params.fetch("first_num").to_f
 
-  @result =  @first_num + @second_num
+  @result = @first_num + @second_num
   erb(:add_result)
 end
 
