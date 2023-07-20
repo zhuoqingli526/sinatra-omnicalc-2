@@ -1,3 +1,3 @@
 # sinatra-omnicalc-2
 
-[Notes for this project are here.](https://learn.firstdraft.com/lessons/112)
+Target: https://omnicalc-2.matchthetarget.com/
