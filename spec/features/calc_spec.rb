@@ -29,7 +29,7 @@ describe "/add" do
   it "has a label with the text 'Add this:'", points: 1, hint: h("copy_must_match") do
     visit "/add"
 
-    expect(page).to have_css("label", text: /Add this/i),
+    expect(page).to have_css("label", text: /Add\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -38,7 +38,7 @@ describe "/add" do
   it "has a label with the text 'to this:'", points: 1, hint: h("copy_must_match") do
     visit "/add"
 
-    expect(page).to have_css("label", text: /to this/i),
+    expect(page).to have_css("label", text: /to\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -71,7 +71,7 @@ end
 describe "/add" do
   it "has a label with the text 'Add this:' that has a matching input", points: 1, hint: h("label_for_input") do
     visit "/add"
-    name_label = find("label", :text => /Add this/i)
+    name_label = find("label", :text => /Add\s+this/i)
     for_attribute = name_label[:for]
 
     if for_attribute.nil?
@@ -120,7 +120,7 @@ describe "/subtract" do
   it "has a label with the text 'Subtract this:'", points: 1, hint: h("copy_must_match") do
     visit "/subtract"
 
-    expect(page).to have_css("label", text: /Subtract this/i),
+    expect(page).to have_css("label", text: /Subtract\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -129,7 +129,7 @@ describe "/subtract" do
   it "has a label with the text 'from this:'", points: 1, hint: h("copy_must_match") do
     visit "/subtract"
 
-    expect(page).to have_css("label", text: /from this/i),
+    expect(page).to have_css("label", text: /from\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -162,7 +162,7 @@ end
 describe "/subtract" do
   it "has a label with the text 'Subtract this:' that has a matching input", points: 1, hint: h("label_for_input") do
     visit "/subtract"
-    name_label = find("label", :text => /Subtract this/i)
+    name_label = find("label", :text => /Subtract\s+this/i)
     for_attribute = name_label[:for]
 
     if for_attribute.nil?
@@ -213,7 +213,7 @@ describe "/multiply" do
   it "has a label with the text 'Multiply this:'", points: 1, hint: h("copy_must_match") do
     visit "/multiply"
 
-    expect(page).to have_css("label", text: /Multiply this/i),
+    expect(page).to have_css("label", text: /Multiply\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -222,7 +222,7 @@ describe "/multiply" do
   it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match") do
     visit "/multiply"
 
-    expect(page).to have_css("label", text: /by this/i),
+    expect(page).to have_css("label", text: /by\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -255,7 +255,7 @@ end
 describe "/multiply" do
   it "has a label with the text 'Multiply this:' that has a matching input", points: 1, hint: h("label_for_input") do
     visit "/multiply"
-    name_label = find("label", :text => /Multiply this/i)
+    name_label = find("label", :text => /Multiply\s+this/i)
     for_attribute = name_label[:for]
 
     if for_attribute.nil?
@@ -306,7 +306,7 @@ describe "/divide" do
   it "has a label with the text 'Divide this:'", points: 1, hint: h("copy_must_match") do
     visit "/divide"
 
-    expect(page).to have_css("label", text: /Divide this/i),
+    expect(page).to have_css("label", text: /Divide\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -315,7 +315,7 @@ describe "/divide" do
   it "has a label with the text 'by this:'", points: 1, hint: h("copy_must_match") do
     visit "/divide"
 
-    expect(page).to have_css("label", text: /by this/i),
+    expect(page).to have_css("label", text: /by\s+this/i),
       "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
@@ -348,7 +348,7 @@ end
 describe "/divide" do
   it "has a label with the text 'Divide this:' that has a matching input", points: 1, hint: h("label_for_input") do
     visit "/divide"
-    name_label = find("label", :text => /Divide this/i)
+    name_label = find("label", :text => /Divide\s+this/i)
     for_attribute = name_label[:for]
 
     if for_attribute.nil?
